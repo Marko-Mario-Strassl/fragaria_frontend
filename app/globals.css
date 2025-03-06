@@ -19,3 +19,38 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+/* Stil für die Wolken */
+.cloud {
+  position: absolute;
+  animation: cloud-move linear infinite;
+  cursor: pointer;
+}
+
+/* Stil für das Zerplatzen */
+.cloud.clicked {
+  animation: cloud-pop 0.5s forwards;
+}
+
+/* Animation für das Zerplatzen */
+@keyframes cloud-pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Animation für die Bewegung */
+@keyframes cloud-move {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(100vw);
+  }
+}

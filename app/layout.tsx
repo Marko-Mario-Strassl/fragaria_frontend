@@ -9,10 +9,11 @@ import { LineupTreibhausProvider } from "@/contexts/LineupTreibhausContext"
 import Footer from "@/components/footer/Footer"
 import { SponsorProvider } from "@/contexts/SponsorContext"
 import { MenuProvider } from "@/contexts/MenuContext"
+import Clouds from "../components/clouds/Clouds"
 
 const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
-	title: "title",
+	title: "Fragaria",
 	description: "description",
 	keywords: "keywords",
 }
@@ -29,14 +30,17 @@ export default function RootLayout({
 						<LineupMainstageProvider>
 							<FaqsProvider>
 								<body
-									className={`${inter.className} bg-blue-300`}
+									className={`${inter.className} bg-blue-300 relative`}
 								>
 									<MenuProvider>
 										<Navbar />
 									</MenuProvider>
-									<main className="max-w-7xl mx-auto py-20 ">
-										{children}
-									</main>
+									<div className="pt-20 relative z-10">
+										<Clouds />
+										<main className=" max-w-7xl mx-auto relative z-10">
+											{children}
+										</main>
+									</div>
 									<Footer />
 								</body>
 							</FaqsProvider>
