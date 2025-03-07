@@ -1,20 +1,15 @@
 import { useState, useEffect } from "react"
-import cloudimg from "../../assets/images/cloud.svg"
-import cloudimg2 from "../../assets/images/cloud_2.svg"
-import cloudimg3 from "../../assets/images/cloud_3.svg"
+import bieneimg from "../../assets/images/biene.svg"
 import Image from "next/image"
 
-interface CloudProps {
+interface BieneProps {
 	index: number
 }
 
-const Cloud = ({ index }: CloudProps) => {
-	const cloudImages = [cloudimg, cloudimg2, cloudimg3]
+const Biene = ({ index }: BieneProps) => {
 	const [style, setStyle] = useState({})
-	const [cloudSrc, setCloudSrc] = useState(cloudimg)
 
 	useEffect(() => {
-		setCloudSrc(cloudImages[Math.floor(Math.random() * cloudImages.length)])
 		setStyle({
 			position: "absolute",
 			top: `${Math.random() * 100}%`,
@@ -34,22 +29,22 @@ const Cloud = ({ index }: CloudProps) => {
 
 	return (
 		<Image
-			src={cloudSrc}
-			className="cloud"
+			src={bieneimg}
+			className="biene"
 			style={style}
-			alt={`Wolke ${index}`}
+			alt={`Biene ${index}`}
 			onClick={handleClick}
 		/>
 	)
 }
 
-export default function CloudsClient() {
-	const numberOfClouds = 20
+export default function BieneClient() {
+	const numberOfBiene = 20
 
 	return (
 		<div className="absolute inset-0 overflow-hidden">
-			{Array.from({ length: numberOfClouds }, (_, index) => (
-				<Cloud key={index} index={index} />
+			{Array.from({ length: numberOfBiene }, (_, index) => (
+				<Biene key={index} index={index} />
 			))}
 		</div>
 	)

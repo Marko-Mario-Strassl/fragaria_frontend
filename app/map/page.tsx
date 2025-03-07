@@ -3,11 +3,14 @@ import Image from "next/image"
 import anreise from "../../assets/images/anreise.png"
 import situation from "../../assets/images/situation.png"
 import { useSiteConfig } from "@/contexts/SiteContext"
-
+import erdbeere_map from "@/assets/images/erdbeere_map.svg"
 export default function MapPage() {
 	const siteConfig = useSiteConfig()
 	return (
 		<>
+			<div className="z-0 absolute -left-[200px]">
+				<Image src={erdbeere_map} alt="Erdbeere" />
+			</div>
 			<div className="container mx-auto px-4 py-8 text-center">
 				<h1
 					className={`text-3xl font-bold mb-8 ${siteConfig.primaryColor}`}

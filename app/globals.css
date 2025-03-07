@@ -54,3 +54,37 @@ body {
     transform: translateX(100vw);
   }
 }
+.biene {
+  position: absolute;
+  animation: biene-move linear infinite;
+  cursor: pointer;
+}
+
+/* Stil für das Zerplatzen */
+.biene.clicked {
+  animation: biene-pop 0.5s forwards;
+}
+
+/* Animation für das Zerplatzen */
+@keyframes biene-pop {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* Animation für die Bewegung */
+@keyframes biene-move {
+  0% {
+    transform: translateX(100vw);
+  }
+
+  100% {
+    transform: translateX(-100vw);
+  }
+}

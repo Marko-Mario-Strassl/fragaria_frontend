@@ -72,6 +72,7 @@ const Navbar = () => {
 										? "text-red-500"
 										: ""
 								}`}
+								target="_blank"
 							>
 								{ticketItem.acf.menu_item.label}
 							</Link>

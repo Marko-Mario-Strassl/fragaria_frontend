@@ -1,5 +1,7 @@
 "use client"
+import Image from "next/image"
 import { useSiteConfig } from "../../contexts/SiteContext"
+import erdbeere_about from "@/assets/images/erdbeere_about.svg"
 
 export default function AboutPage() {
 	const siteConfig = useSiteConfig()
@@ -26,6 +28,9 @@ export default function AboutPage() {
 						Wie die Limmat wollen auch wir einen prägenden Eindruck
 						im Limmattal hinterlassen.
 					</h2>
+				</div>
+				<div className="mx-auto w-fit">
+					<Image src={erdbeere_about} alt="Erdbeere" />
 				</div>
 			</div>
 		</>

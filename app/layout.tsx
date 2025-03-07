@@ -10,6 +10,7 @@ import Footer from "@/components/footer/Footer"
 import { SponsorProvider } from "@/contexts/SponsorContext"
 import { MenuProvider } from "@/contexts/MenuContext"
 import Clouds from "../components/clouds/Clouds"
+import Biene from "../components/biene/Biene"
 
 const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
@@ -35,8 +36,9 @@ export default function RootLayout({
 									<MenuProvider>
 										<Navbar />
 									</MenuProvider>
-									<div className="pt-20 relative z-10">
+									<div className="pt-20 relative z-10 min-h-[80vh]">
 										<Clouds />
+										<Biene />
 										<main className=" max-w-7xl mx-auto relative z-10">
 											{children}
 										</main>
