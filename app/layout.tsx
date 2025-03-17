@@ -1,3 +1,4 @@
+// layout.tsx
 import "./globals.css"
 import Navbar from "../components/navbar/Navbar"
 import { Inter } from "next/font/google"
@@ -9,8 +10,7 @@ import { LineupTreibhausProvider } from "@/contexts/LineupTreibhausContext"
 import Footer from "@/components/footer/Footer"
 import { SponsorProvider } from "@/contexts/SponsorContext"
 import { MenuProvider } from "@/contexts/MenuContext"
-import Clouds from "../components/clouds/Clouds"
-import Biene from "../components/biene/Biene"
+import BackgroundImages from "@/components/BackgroundImages/BackgroundImages" // Importiere die Komponente
 
 const inter = Inter({ subsets: ["latin"] })
 export const metadata: Metadata = {
@@ -18,6 +18,7 @@ export const metadata: Metadata = {
 	description: "description",
 	keywords: "keywords",
 }
+
 export default function RootLayout({
 	children,
 }: {
@@ -37,9 +38,8 @@ export default function RootLayout({
 										<Navbar />
 									</MenuProvider>
 									<div className="pt-20 relative z-10 min-h-[80vh]">
-										<Clouds />
-										<Biene />
-										<main className=" max-w-7xl mx-auto relative z-10">
+										<BackgroundImages />{" "}
+										<main className="max-w-7xl mx-auto relative z-10">
 											{children}
 										</main>
 									</div>

@@ -19,7 +19,7 @@ export default function ContactPage() {
 				Kontaktieren Sie uns!
 			</h1>
 
-			<div className="text-white md:w-1/2 h-fit w-fit flex flex-col md:flex-row items-center ">
+			<div className="text-black md:w-1/2 h-fit w-fit flex flex-col md:flex-row items-center ">
 				<ul className="space-y-3 min-w-full pl-6">
 					<li className="flex items-center">
 						<EnvelopeIcon className="w-5 h-5 mr-3 text-red-500" />

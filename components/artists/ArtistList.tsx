@@ -45,7 +45,7 @@ const ArtistList: React.FC<ArtistListProps> = ({ artists }) => {
 					/>
 				))
 			) : (
-				<h2 className="col-span-full text-center text-2xl font-bold text-white">
+				<h2 className="col-span-full text-center text-2xl font-bold text-black">
 					Coming Soon...
 				</h2>
 			)}

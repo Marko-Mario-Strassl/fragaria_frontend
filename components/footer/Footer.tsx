@@ -7,7 +7,7 @@ import { FaFacebookF, FaInstagram } from "react-icons/fa"
 const Footer: React.FC = () => {
 	const siteConfig = useSiteConfig()
 	return (
-		<div className=" text-white text-center py-6 self-end">
+		<div className=" text-black text-center py-6 self-end">
 			{/* Social Media Icons */}
 			<div className="flex justify-center space-x-4 mb-4">
 				<a

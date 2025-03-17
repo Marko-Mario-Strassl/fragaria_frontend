@@ -7,7 +7,7 @@ export default function HomePage() {
 				<h1 className="text-6xl md:text-8xl font-extrabold text-red-500 mb-4 animate-fade-in-down">
 					Fragaria
 				</h1>
-				<h2 className="text-xl md:text-3xl font-semibold text-white animate-fade-in-up">
+				<h2 className="text-xl md:text-3xl font-semibold text-black animate-fade-in-up">
 					26.07.2025 - SAVE THE DATE
 				</h2>
 			</div>
