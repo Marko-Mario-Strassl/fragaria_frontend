@@ -2,17 +2,17 @@
 "use client"
 import Image from "next/image"
 import {
-	Biene1,
-	Biene2,
-	Erdbeere1,
-	Erdbeere2,
-	Erdbeere3,
-	Erdbeere4,
-	Erdbeere5,
-	Erdbeere6,
-	Wolke1,
-	Wolke2,
-	Wolke3,
+  Biene1,
+  Biene2,
+  Erdbeere1,
+  Erdbeere2,
+  Erdbeere3,
+  Erdbeere4,
+  Erdbeere5,
+  Erdbeere6,
+  Wolke1,
+  Wolke2,
+  Wolke3,
 } from "@/assets"
 import { useEffect, useState } from "react"
 
@@ -38,41 +38,61 @@ const mobileImages = [
 	{ src: Wolke1, width: 160, height: 160, top: "10%", left: "40%" },
 ]
 
+const smallMobileImages = [
+  { src: Erdbeere4, width: 100, height: 100, top: "5%", left: "5%" },
+  { src: Erdbeere1, width: 100, height: 100, top: "80%", left: "60%" },
+]
+
 export default function BackgroundImages() {
-	const [isMobileScreenSize, setIsMobileScreenSize] = useState(false)
+  const [screenSizeCategory, setScreenSizeCategory] = useState("desktop")
 
-	useEffect(() => {
-		const handleResize = () => {
-			setIsMobileScreenSize(window.innerWidth < 768)
-		}
-		handleResize()
-		window.addEventListener("resize", handleResize)
-		return () => window.removeEventListener("resize", handleResize)
-	}, [])
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth
+      if (width < 480) {
+        setScreenSizeCategory("smallMobile")
+      } else if (width < 768) {
+        setScreenSizeCategory("mobile")
+      } else {
+        setScreenSizeCategory("desktop")
+      }
+    }
 
-	const imagesToDisplay = isMobileScreenSize ? mobileImages : allImages
+    handleResize()
+    window.addEventListener("resize", handleResize)
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
 
-	return (
-		<>
-			{imagesToDisplay.map((image, index) => (
-				<div
-					key={index}
-					style={{
-						position: "absolute",
-						top: image.top,
-						left: image.left,
-						zIndex: -1,
-					}}
-				>
-					<Image
-						src={image.src}
-						width={image.width}
-						height={image.height}
-						alt={`Background Image ${index}`}
-						style={{ objectFit: "cover" }}
-					/>
-				</div>
-			))}
-		</>
-	)
+  let imagesToDisplay
+  if (screenSizeCategory === "smallMobile") {
+    imagesToDisplay = smallMobileImages
+  } else if (screenSizeCategory === "mobile") {
+    imagesToDisplay = mobileImages
+  } else {
+    imagesToDisplay = allImages
+  }
+
+  return (
+    <>
+      {imagesToDisplay.map((image, index) => (
+        <div
+          key={index}
+          style={{
+            position: "absolute",
+            top: image.top,
+            left: image.left,
+            zIndex: -1,
+          }}
+        >
+          <Image
+            src={image.src}
+            width={image.width}
+            height={image.height}
+            alt={`Background Image ${index}`}
+            style={{ objectFit: "cover" }}
+          />
+        </div>
+      ))}
+    </>
+  )
 }
