@@ -1,6 +1,11 @@
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
+	experimental: {
+		optimizePackageImports: ["@headlessui/react", "@heroicons/react"], // Hier kannst du Paketnamen hinzufügen
+		serverSourceMaps: false,
+	},
+	productionBrowserSourceMaps: false,
 	images: {
 		remotePatterns: [
 			{
