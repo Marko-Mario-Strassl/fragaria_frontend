@@ -1,39 +1,49 @@
 "use client"
-import { Faq } from "@/contexts/FaqsContext"
-import React, { useState } from "react"
-import { ChevronDownIcon } from "@heroicons/react/24/solid"
 
-interface FaqCardProps {
-	faq: Faq
+import React from "react"
+import { Accordion, AccordionItem } from "@heroui/react"
+import { Icon } from "@iconify/react"
+
+interface Faq {
+	acf: {
+		label: string
+		description: string
+	}
 }
 
-const FaqCard: React.FC<FaqCardProps> = ({ faq }) => {
-	const [isOpen, setIsOpen] = useState(false)
+interface FaqsProps {
+	faqs: Faq[]
+}
 
+const FaqSection: React.FC<FaqsProps> = ({ faqs }) => {
 	return (
-		<div className="bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition-shadow duration-300 max-w-3xl mx-auto">
-			<button
-				className="w-full text-left p-6 focus:outline-none"
-				onClick={() => setIsOpen(!isOpen)}
+		<div className="mx-auto flex w-full max-w-4xl flex-col gap-6">
+			<Accordion
+				fullWidth
+				keepContentMounted
+				className="gap-3"
+				itemClasses={{
+					base: "px-6 !bg-default-100 !shadow-none hover:!bg-default-200/50",
+					title: "font-medium",
+					trigger: "py-6",
+					content: "pt-0 pb-6 text-base text-default-500",
+				}}
+				selectionMode="multiple"
+				variant="splitted"
 			>
-				<div className="flex justify-between items-center">
-					<h2 className="text-sm md:text-lg font-semibold text-gray-800">
-						{faq.acf.label}
-					</h2>
-					<ChevronDownIcon
-						className={`w-6 h-6 text-gray-600 transition-transform duration-300 ${
-							isOpen ? "transform rotate-180" : ""
-						}`}
-					/>
-				</div>
-			</button>
-			{isOpen && (
-				<div className="p-6 pt-0">
-					<p className="text-gray-600">{faq.acf.description}</p>
-				</div>
-			)}
+				{faqs.map((faq, index) => (
+					<AccordionItem
+						key={index}
+						indicator={<Icon icon="lucide:plus" width={24} />}
+						title={faq.acf.label}
+						className="bg-white rounded-lg text-left"
+					>
+						{faq.acf.description}
+					</AccordionItem>
+				))}
+			</Accordion>
 		</div>
 	)
 }
 
-export default FaqCard
+export default FaqSection
