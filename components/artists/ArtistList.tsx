@@ -8,16 +8,17 @@ interface ArtistListProps {
 }
 
 const ArtistList: React.FC<ArtistListProps> = ({ artists }) => {
-	// Zustand für die ID der geöffneten Karte
-	const [expandedCardId, setExpandedCardId] = useState<string | null>(null)
+	const [openCardId, setOpenCardId] = useState<number | null>(null)
 
-	// Hilfsfunktion zur Umwandlung der Zeit in Minuten seit Mitternacht
+	const handleToggle = (id: number) => {
+		setOpenCardId((prevId) => (prevId === id ? null : id))
+	}
+
 	const timeToMinutes = (time: string): number => {
 		const [hours, minutes] = time.split(":").map(Number)
 		return (hours % 24) * 60 + minutes
 	}
 
-	// Sortierfunktion für Zeiten über Mitternacht
 	const sortArtists = (a: LineupItem, b: LineupItem): number => {
 		const timeA = timeToMinutes(a.acf.zeit_von)
 		const timeB = timeToMinutes(b.acf.zeit_von)
@@ -42,14 +43,8 @@ const ArtistList: React.FC<ArtistListProps> = ({ artists }) => {
 						description={artist.acf.description}
 						zeit_von={artist.acf.zeit_von}
 						zeit_bis={artist.acf.zeit_bis}
-						isExpanded={expandedCardId === artist.id.toString()} // Überprüfen ob diese Karte geöffnet ist
-						onToggle={() =>
-							setExpandedCardId(
-								expandedCardId === artist.id.toString()
-									? null
-									: artist.id.toString()
-							)
-						} // Umschalten zwischen geöffnet/geschlossen
+						isOpen={openCardId === artist.id}
+						onToggle={() => handleToggle(artist.id)}
 					/>
 				))
 			) : (
