@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "Fragaria",
 		description:
-			"Fragaria ist ein Event, das Musik, Kultur und Gemeinschaft vereint.",
+			"Aus Liebe zur Tanzmusik und der Motivation neue Wege zu beschreiten, wollen wir Veranstaltungen in harmonischer Atmosphäre schaffen.",
 		url: "https://fragaria.ch",
 		siteName: "Fragaria",
 		images: [],
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		title: "Fragaria",
 		description:
-			"Fragaria ist ein Event, das Musik, Kultur und Gemeinschaft vereint.",
+			"Aus Liebe zur Tanzmusik und der Motivation neue Wege zu beschreiten, wollen wir Veranstaltungen in harmonischer Atmosphäre schaffen.",
 		images: [],
 	},
 }
