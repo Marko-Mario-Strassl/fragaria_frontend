@@ -19,8 +19,9 @@ export const metadata: Metadata = {
 		default: "Fragaria",
 	},
 	description:
-		"Fragaria ist ein Event, das Musik, Kultur und Gemeinschaft vereint.",
-	keywords: "Fragaria, Musikfestival, Kulturveranstaltung",
+		"Aus Liebe zur Tanzmusik und der Motivation neue Wege zu beschreiten, wollen wir Veranstaltungen in harmonischer Atmosphäre schaffen.",
+	keywords:
+		"Fragaria, Daydance, Erdbeerfeld, Fragaria Tickets,  Wettingen, Musikfestival, Kulturveranstaltung",
 	openGraph: {
 		title: "Fragaria",
 		description:
