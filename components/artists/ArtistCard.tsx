@@ -9,22 +9,30 @@ interface ArtistCardProps {
 	description: string
 	zeit_von: string
 	zeit_bis: string
+	isExpanded: boolean // Neue Prop für den Zustand (offen/geschlossen)
+	onToggle: () => void // Neue Prop für das Umschalten
 }
 
 const ArtistCard: React.FC<ArtistCardProps> = ({
 	imageUrl,
 	name,
-	description,
 	zeit_von,
 	zeit_bis,
+	isExpanded,
+	onToggle,
 }) => {
-	// Funktion zum Formatieren der Zeit (Entfernen der Sekunden)
 	const formatTime = (time: string) => {
 		return time.substring(0, 5) // Nimmt nur die ersten 5 Zeichen (HH:MM)
 	}
 
 	return (
-		<div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
+		<div
+			className={`bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 ${
+				isExpanded ? "scale-100" : "hover:scale-105"
+			}`}
+			onClick={onToggle} // Aufruf der Umschaltfunktion beim Klick
+			style={{ cursor: "pointer" }}
+		>
 			<div className="relative h-64 w-full bg-black">
 				{imageUrl && (
 					<Image
@@ -45,7 +53,6 @@ const ArtistCard: React.FC<ArtistCardProps> = ({
 				<h2 className="text-2xl font-bold text-gray-800 mb-2">
 					{name}
 				</h2>
-				<p className="text-gray-600 mb-4">{description}</p>
 			</div>
 		</div>
 	)

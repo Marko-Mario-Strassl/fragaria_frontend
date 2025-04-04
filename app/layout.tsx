@@ -1,4 +1,3 @@
-// layout.tsx
 import "./globals.css"
 import Navbar from "../components/navbar/Navbar"
 import { Inter } from "next/font/google"
@@ -10,13 +9,35 @@ import { LineupTreibhausProvider } from "@/contexts/LineupTreibhausContext"
 import Footer from "@/components/footer/Footer"
 import { SponsorProvider } from "@/contexts/SponsorContext"
 import { MenuProvider } from "@/contexts/MenuContext"
-import BackgroundImages from "@/components/BackgroundImages/BackgroundImages" // Importiere die Komponente
+import BackgroundImages from "@/components/BackgroundImages/BackgroundImages"
 
 const inter = Inter({ subsets: ["latin"] })
+
 export const metadata: Metadata = {
-	title: "Fragaria",
-	description: "description",
-	keywords: "keywords",
+	title: {
+		template: "%s | Fragaria",
+		default: "Fragaria",
+	},
+	description:
+		"Fragaria ist ein Event, das Musik, Kultur und Gemeinschaft vereint.",
+	keywords: "Fragaria, Musikfestival, Kulturveranstaltung",
+	openGraph: {
+		title: "Fragaria",
+		description:
+			"Fragaria ist ein Event, das Musik, Kultur und Gemeinschaft vereint.",
+		url: "https://fragaria.ch",
+		siteName: "Fragaria",
+		images: [],
+		locale: "de_DE",
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Fragaria",
+		description:
+			"Fragaria ist ein Event, das Musik, Kultur und Gemeinschaft vereint.",
+		images: [],
+	},
 }
 
 export default function RootLayout({
@@ -25,6 +46,7 @@ export default function RootLayout({
 	children: React.ReactNode
 }) {
 	return (
+		// Dein Seiteninhalt bleibt gleich
 		<html lang="de">
 			<SiteConfigProvider>
 				<SponsorProvider>
