@@ -13,33 +13,26 @@ const Navbar = () => {
 	const pathname = usePathname()
 	const { menuItems, loading } = useMenus()
 
-	const { filteredMenuItems, ticketItem } = useMemo(() => {
-		if (!menuItems || menuItems.length === 0) {
-			return { filteredMenuItems: [], ticketItem: null }
-		}
-
-		// Sortierfunktion
-		const sortByAcfId = (a: MenuItem, b: MenuItem) => a.acf.id - b.acf.id
-
-		// Sortiere alle Menüitems
-		const sortedMenuItems = [...menuItems].sort(sortByAcfId)
-
-		const ticketItem = sortedMenuItems.find(
-			(item) => item.acf?.menu_item?.label?.toLowerCase() === "tickets"
+	const sortedMenuItems = useMemo(() => {
+		if (!menuItems || menuItems.length === 0) return []
+		return [...menuItems].sort(
+			(a: MenuItem, b: MenuItem) => a.acf.id - b.acf.id
 		)
-
-		const filteredMenuItems = sortedMenuItems.filter(
-			(item) => item.acf?.menu_item?.label?.toLowerCase() !== "tickets"
-		)
-
-		return { filteredMenuItems, ticketItem }
 	}, [menuItems])
+
+	// Finde das Ticket-Item
+	const ticketItem = useMemo(
+		() =>
+			sortedMenuItems.find(
+				(item) =>
+					item.acf?.menu_item?.label?.toLowerCase() === "tickets"
+			),
+		[sortedMenuItems]
+	)
 
 	if (loading) return <div>Lädt...</div>
 
-	const isActive = (href: string) => {
-		return pathname === href
-	}
+	const isActive = (href: string) => pathname === href
 
 	return (
 		<nav className="bg-white shadow-lg">
@@ -60,23 +53,23 @@ const Navbar = () => {
 						</Link>
 					</div>
 
-					{/* Ticket Navigation and Mobile Menu Button */}
+					{/* Nur Ticket-Item im Header */}
 					<div className="flex items-center space-x-4">
 						{ticketItem &&
-						ticketItem.acf?.menu_item?.route &&
-						ticketItem.acf?.menu_item?.label ? (
-							<Link
-								href={ticketItem.acf.menu_item.route}
-								className={`text-gray-600 hover:text-red-500 font-medium transition duration-300 ${
-									isActive(ticketItem.acf.menu_item.route)
-										? "text-red-500"
-										: ""
-								}`}
-								target="_blank"
-							>
-								{ticketItem.acf.menu_item.label}
-							</Link>
-						) : null}
+							ticketItem.acf?.menu_item?.route &&
+							ticketItem.acf?.menu_item?.label && (
+								<Link
+									href={ticketItem.acf.menu_item.route}
+									className={`text-gray-600 hover:text-red-500 font-medium transition duration-300 ${
+										isActive(ticketItem.acf.menu_item.route)
+											? "text-red-500"
+											: ""
+									}`}
+									target="_blank"
+								>
+									{ticketItem.acf.menu_item.label}
+								</Link>
+							)}
 						<button
 							className="text-gray-600 hover:text-primary focus:outline-none"
 							onClick={() => setIsOpen(!isOpen)}
@@ -101,15 +94,15 @@ const Navbar = () => {
 				</div>
 			</div>
 
-			{/* Mobile Navigation */}
+			{/* Mobile Navigation: alle Items inkl. Tickets */}
 			<div
 				className={`transition-all duration-300 ${
 					isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
 				}`}
 			>
 				<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
-					{filteredMenuItems && filteredMenuItems.length > 0 ? (
-						filteredMenuItems.map((item) =>
+					{sortedMenuItems && sortedMenuItems.length > 0 ? (
+						sortedMenuItems.map((item) =>
 							item.acf?.menu_item &&
 							item.acf.menu_item.route &&
 							item.acf.menu_item.label ? (
@@ -121,7 +114,13 @@ const Navbar = () => {
 											? "text-red-500"
 											: ""
 									}`}
-									onClick={() => setIsOpen(!isOpen)}
+									target={
+										item.acf.menu_item.label.toLowerCase() ===
+										"tickets"
+											? "_blank"
+											: undefined
+									}
+									onClick={() => setIsOpen(false)}
 								>
 									{item.acf.menu_item.label}
 								</Link>
