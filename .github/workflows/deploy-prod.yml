@@ -20,4 +20,4 @@ jobs:
             git pull
             npm install
             npm run build
-            pm2 restart fragaria
+            pm2 restart fragaria 
