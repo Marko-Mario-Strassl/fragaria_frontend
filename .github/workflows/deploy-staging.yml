@@ -1,0 +1,23 @@
+name: Deploy to staging.fragaria.ch
+
+on:
+  push:
+    branches: [staging]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: SSH into Server & Deploy
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.STAGING_SERVER_HOST }}
+          username: ${{ secrets.STAGING_SERVER_USER }}
+          key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
+          script: |
+            cd /path/to/staging.fragaria.ch
+            git pull
+            npm install
+            npm run build
+            pm2 restart fragaria-staging 
