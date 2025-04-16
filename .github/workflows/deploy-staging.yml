@@ -5,18 +5,18 @@ on:
     branches: [staging]
 
 jobs:
-  deploy:
+  deploy-staging:
     runs-on: ubuntu-latest
 
     steps:
-      - name: SSH into Server & Deploy
+      - name: SSH into staging server & deploy
         uses: appleboy/ssh-action@v1.0.0
         with:
           host: ${{ secrets.STAGING_SERVER_HOST }}
           username: ${{ secrets.STAGING_SERVER_USER }}
           key: ${{ secrets.STAGING_SERVER_SSH_KEY }}
           script: |
-            cd /path/to/staging.fragaria.ch
+            cd /path/to/staging/fragaria.ch
             git pull
             npm install
             npm run build
