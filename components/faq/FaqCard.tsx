@@ -36,7 +36,7 @@ const FaqSection: React.FC<FaqsProps> = ({ faqs }) => {
 						key={index}
 						indicator={<Icon icon="lucide:plus" width={24} />}
 						title={faq.acf.label}
-						className="bg-white rounded-lg text-left"
+						className="bg-white rounded-lg text-left text-black"
 					>
 						{faq.acf.description}
 					</AccordionItem>

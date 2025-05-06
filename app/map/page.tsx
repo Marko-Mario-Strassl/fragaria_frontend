@@ -1,7 +1,7 @@
 "use client"
 import Image from "next/image"
-import anreise from "../../assets/images/anreise.png"
-import situation from "../../assets/images/situation.png"
+import anreise from "../../assets/images/anreise.jpg"
+import situation from "../../assets/images/situation.jpg"
 import { useSiteConfig } from "@/contexts/SiteContext"
 export default function MapPage() {
 	const siteConfig = useSiteConfig()
