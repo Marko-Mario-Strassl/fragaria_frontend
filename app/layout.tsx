@@ -55,7 +55,7 @@ export default function RootLayout({
 						<LineupMainstageProvider>
 							<FaqsProvider>
 								<body
-									className={`${inter.className} bg-blue-300 relative`}
+									className={`${inter.className} bg-[#2f93ff] relative`}
 								>
 									<MenuProvider>
 										<Navbar />

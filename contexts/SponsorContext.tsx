@@ -8,6 +8,7 @@ export interface SponsorItem {
 	acf: {
 		name: string
 		bild: string
+		link: string
 	}
 	imageUrl: string
 }

@@ -2,13 +2,15 @@
 
 import React, { useEffect, useState } from "react"
 import Image from "next/image"
+import Link from "next/link"
 
 interface SponsorCardProps {
 	bildId: string
 	name: string
+	link: string
 }
 
-const SponsorCard: React.FC<SponsorCardProps> = ({ bildId, name }) => {
+const SponsorCard: React.FC<SponsorCardProps> = ({ bildId, name, link }) => {
 	const [imageUrl, setImageUrl] = useState<string | null>(null)
 
 	useEffect(() => {
@@ -29,15 +31,17 @@ const SponsorCard: React.FC<SponsorCardProps> = ({ bildId, name }) => {
 
 	return (
 		<div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
-			<div className="relative h-64 w-full bg-black">
+			<div className="relative h-64 w-full bg-white">
 				{imageUrl && (
-					<Image
-						src={imageUrl}
-						alt={name}
-						layout="fill"
-						objectFit="contain"
-						className="transition-opacity duration-300 hover:opacity-90"
-					/>
+					<Link href={link}>
+						<Image
+							src={imageUrl}
+							alt={name}
+							layout="fill"
+							objectFit="contain"
+							className="transition-opacity duration-300 hover:opacity-90"
+						/>
+					</Link>
 				)}
 			</div>
 			<div className="px-6">
