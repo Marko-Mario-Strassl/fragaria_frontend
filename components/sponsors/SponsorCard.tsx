@@ -33,7 +33,7 @@ const SponsorCard: React.FC<SponsorCardProps> = ({ bildId, name, link }) => {
 		<div className="bg-white rounded-lg shadow-md overflow-hidden transition-transform duration-300 hover:scale-105">
 			<div className="relative h-64 w-full bg-white">
 				{imageUrl && (
-					<Link href={link}>
+					<Link href={link} target="_blank">
 						<Image
 							src={imageUrl}
 							alt={name}
