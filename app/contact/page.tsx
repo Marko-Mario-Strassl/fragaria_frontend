@@ -19,39 +19,41 @@ export default function ContactPage() {
 				Kontaktieren Sie uns!
 			</h1>
 
-			<div className="text-black md:w-1/2 h-fit w-fit flex flex-col md:flex-row items-center ">
-				<ul className="space-y-3 min-w-full pl-6">
-					<li className="flex items-center">
-						<EnvelopeIcon className="w-5 h-5 mr-3 text-red-500" />
-						<Link
-							href={`mailto:${siteConfig.contact.email}`}
-							className="hover:text-red-500"
-							target="_blank"
-						>
-							{siteConfig.contact.email}
-						</Link>
-					</li>
-					<li className="flex items-center">
-						<PhoneIcon className="w-5 h-5 mr-3 text-red-500" />
-						<Link
-							href={`tel:${siteConfig.contact.phone}`}
-							className="hover:text-red-500"
-							target="_blank"
-						>
-							{siteConfig.contact.phone}
-						</Link>
-					</li>
-					<li className="flex items-center">
-						<MapPinIcon className="w-7 h-7 mr-3 text-red-500" />
-						<Link
-							href={siteConfig.contact.maps}
-							className="hover:text-red-500"
-							target="_blank"
-						>
-							{siteConfig.contact.address}
-						</Link>
-					</li>
-				</ul>
+			<div className="text-black white md:w-1/2 h-fit w-fit flex flex-col md:flex-row items-center ">
+				<div className="space-y-3 min-w-full ">
+					<ul className=" bg-white w-fit p-4 rounded-md pl-6">
+						<li className="mb-4 flex items-center">
+							<EnvelopeIcon className="w-5 h-5 mr-3 text-red-500" />
+							<Link
+								href={`mailto:${siteConfig.contact.email}`}
+								className="hover:text-red-500"
+								target="_blank"
+							>
+								{siteConfig.contact.email}
+							</Link>
+						</li>
+						<li className="mb-4 flex items-center">
+							<PhoneIcon className="w-5 h-5 mr-3 text-red-500" />
+							<Link
+								href={`tel:${siteConfig.contact.phone}`}
+								className="hover:text-red-500"
+								target="_blank"
+							>
+								{siteConfig.contact.phone}
+							</Link>
+						</li>
+						<li className="mb-4 flex items-center">
+							<MapPinIcon className="w-7 h-7 mr-3 text-red-500" />
+							<Link
+								href={siteConfig.contact.maps}
+								className="hover:text-red-500"
+								target="_blank"
+							>
+								{siteConfig.contact.address}
+							</Link>
+						</li>
+					</ul>
+				</div>
 				<ContactForm />
 			</div>
 		</div>
