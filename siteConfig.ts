@@ -14,6 +14,5 @@ export const siteConfig = {
 	socialMedia: {
 		facebook: "https://www.facebook.com/tanzmat.tm",
 		instagram: "https://www.instagram.com/fragaria.tm/",
-		linkedin: "https://linkedin.com/company/nordportalbaden",
 	},
 }
