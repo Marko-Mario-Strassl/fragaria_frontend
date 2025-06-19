@@ -85,7 +85,7 @@ const ContactForm: React.FC = () => {
 			<div className="text-center">
 				<button
 					type="submit"
-					className="w-full mx-auto bg-red-500 text-black font-bold py-2 px-4 rounded-md hover:bg-red-600 transition duration-300"
+					className="w-full mx-auto bg-red-500 text-white font-bold py-2 px-4 rounded-md hover:bg-red-600 transition duration-300"
 				>
 					Senden
 				</button>

@@ -15,6 +15,7 @@ const SponsorList: React.FC<ArtistListProps> = ({ sponsors }) => {
 					key={sponsor.id}
 					bildId={sponsor.acf.bild}
 					name={sponsor.acf.name}
+					link={sponsor.acf.link ? sponsor.acf.link : ""}
 				/>
 			))}
 		</div>
