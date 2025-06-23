@@ -35,7 +35,7 @@ const Navbar = () => {
 	const isActive = (href: string) => pathname === href
 
 	return (
-		<nav className="bg-white shadow-lg">
+		<nav className="bg-white sticky top-0 z-50 shadow-lg">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between items-center h-20">
 					{/* Logo */}
@@ -70,6 +70,31 @@ const Navbar = () => {
 									{ticketItem.acf.menu_item.label}
 								</Link>
 							)}
+						<Link
+							className="text-gray-600 hover:text-primary focus:outline-none"
+							href="https://maps.app.goo.gl/NBekjXxbtTSW2VHG6"
+							target="_blank"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								fill="none"
+								viewBox="0 0 24 24"
+								strokeWidth="1.5"
+								stroke="currentColor"
+								className="size-6"
+							>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+								/>
+								<path
+									strokeLinecap="round"
+									strokeLinejoin="round"
+									d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+								/>
+							</svg>
+						</Link>
 						<button
 							className="text-gray-600 hover:text-primary focus:outline-none"
 							onClick={() => setIsOpen(!isOpen)}
