@@ -1,6 +1,5 @@
 import "./globals.css"
 import Navbar from "../components/navbar/Navbar"
-import { Inter } from "next/font/google"
 import { Metadata } from "next"
 import { SiteConfigProvider } from "@/contexts/SiteContext"
 import { FaqsProvider } from "@/contexts/FaqsContext"
@@ -11,7 +10,6 @@ import { SponsorProvider } from "@/contexts/SponsorContext"
 import { MenuProvider } from "@/contexts/MenuContext"
 import BackgroundImages from "@/components/BackgroundImages/BackgroundImages"
 
-const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
 	title: {
@@ -54,9 +52,7 @@ export default function RootLayout({
 					<LineupTreibhausProvider>
 						<LineupMainstageProvider>
 							<FaqsProvider>
-								<body
-									className={`${inter.className} bg-[#2f93ff] relative`}
-								>
+                                                                <body className="bg-[#2f93ff] relative">
 									<MenuProvider>
 										<Navbar />
 									</MenuProvider>
