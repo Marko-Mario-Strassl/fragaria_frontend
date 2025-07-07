@@ -88,7 +88,7 @@ export default function BackgroundImages() {
             src={image.src}
             width={image.width}
             height={image.height}
-            alt={`Background Image ${index}`}
+            alt={`Dekoratives Bild ${index + 1}`}
             style={{ objectFit: "cover" }}
           />
         </div>

@@ -1,5 +1,4 @@
 "use client"
-
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Lightbox from "yet-another-react-lightbox"

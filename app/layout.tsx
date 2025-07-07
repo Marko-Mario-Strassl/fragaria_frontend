@@ -18,8 +18,11 @@ export const metadata: Metadata = {
 	},
 	description:
 		"Aus Liebe zur Tanzmusik und der Motivation neue Wege zu beschreiten, wollen wir Veranstaltungen in harmonischer Atmosphäre schaffen.",
-	keywords:
-		"Fragaria, Daydance, Erdbeerfeld, Fragaria Tickets,  Wettingen, Musikfestival, Kulturveranstaltung",
+        keywords:
+                "Fragaria, Daydance, Erdbeerfeld, Fragaria Tickets,  Wettingen, Musikfestival, Kulturveranstaltung",
+        alternates: {
+                canonical: "https://www.fragaria.ch",
+        },
 	openGraph: {
 		title: "Fragaria",
 		description:

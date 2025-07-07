@@ -15,13 +15,14 @@ export default function MapPage() {
 					Anreiseplan
 				</h1>
 				<div className="flex justify-center mb-8 z-10">
-					<Image
-						src={anreise}
-						alt="Anreiseplan"
-						width={500}
-						height={300}
-						className="object-cover"
-					/>
+                                        <Image
+                                                src={anreise}
+                                                alt="Anreiseplan"
+                                                width={500}
+                                                height={300}
+                                                className="object-cover"
+                                                sizes="(min-width: 768px) 500px, 100vw"
+                                        />
 				</div>
 				<h1
 					className={`${siteConfig.primaryColor} text-3xl font-bold mt-12 mb-8`}
@@ -29,13 +30,14 @@ export default function MapPage() {
 					Situationsplan
 				</h1>
 				<div className="flex justify-center">
-					<Image
-						src={situation}
-						alt="Situationsplan"
-						width={500}
-						height={300}
-						className="object-cover"
-					/>
+                                        <Image
+                                                src={situation}
+                                                alt="Situationsplan"
+                                                width={500}
+                                                height={300}
+                                                className="object-cover"
+                                                sizes="(min-width: 768px) 500px, 100vw"
+                                        />
 				</div>
 			</div>
 		</>
