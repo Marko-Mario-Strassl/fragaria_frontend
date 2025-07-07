@@ -41,12 +41,12 @@ const Navbar = () => {
 					{/* Logo */}
 					<div className="flex-shrink-0 flex items-center ">
 						<Link href="/" className="flex items-center">
-							<Image
-								src={siteConfig.logo}
-								alt="Logo"
-								width={80}
-								height={80}
-							/>
+                                                        <Image
+                                                                src={siteConfig.logo}
+                                                                alt="Fragaria Logo"
+                                                                width={80}
+                                                                height={80}
+                                                        />
 							<span className="ml-2 text-xl font-bold text-gray-800 hover:text-red-500">
 								{siteConfig.company}
 							</span>
@@ -70,11 +70,12 @@ const Navbar = () => {
 									{ticketItem.acf.menu_item.label}
 								</Link>
 							)}
-						<Link
-							className="text-gray-600 hover:text-primary focus:outline-none"
-							href="https://maps.app.goo.gl/NBekjXxbtTSW2VHG6"
-							target="_blank"
-						>
+                                                <Link
+                                                        className="text-gray-600 hover:text-primary focus:outline-none"
+                                                        href="https://maps.app.goo.gl/NBekjXxbtTSW2VHG6"
+                                                        target="_blank"
+                                                        aria-label="Anfahrt in Google Maps öffnen"
+                                                >
 							<svg
 								xmlns="http://www.w3.org/2000/svg"
 								fill="none"

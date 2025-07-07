@@ -34,7 +34,7 @@ const ContactForm: React.FC = () => {
 	}
 
 	return (
-		<form onSubmit={handleSubmit} className="min-w-full mx-auto mt-8 p-6 ">
+                <form onSubmit={handleSubmit} className="w-full max-w-xl mx-auto mt-8 p-6 ">
 			<div className="mb-4">
 				<label
 					htmlFor="name"
@@ -42,14 +42,16 @@ const ContactForm: React.FC = () => {
 				>
 					Name
 				</label>
-				<input
-					type="text"
-					id="name"
-					value={name}
-					onChange={(e) => setName(e.target.value)}
-					required
-					className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-				/>
+                                <input
+                                        type="text"
+                                        id="name"
+                                        value={name}
+                                        onChange={(e) => setName(e.target.value)}
+                                        required
+                                        autoComplete="name"
+                                        aria-required="true"
+                                        className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                                />
 			</div>
 			<div className="mb-4">
 				<label
@@ -58,14 +60,16 @@ const ContactForm: React.FC = () => {
 				>
 					E-Mail
 				</label>
-				<input
-					type="email"
-					id="email"
-					value={email}
-					onChange={(e) => setEmail(e.target.value)}
-					required
-					className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
-				/>
+                                <input
+                                        type="email"
+                                        id="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                        required
+                                        autoComplete="email"
+                                        aria-required="true"
+                                        className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500"
+                                />
 			</div>
 			<div className="mb-4">
 				<label
@@ -74,21 +78,23 @@ const ContactForm: React.FC = () => {
 				>
 					Nachricht
 				</label>
-				<textarea
-					id="message"
-					value={message}
-					onChange={(e) => setMessage(e.target.value)}
-					required
-					className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 h-32"
-				></textarea>
+                                <textarea
+                                        id="message"
+                                        value={message}
+                                        onChange={(e) => setMessage(e.target.value)}
+                                        required
+                                        aria-required="true"
+                                        className="text-black w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 h-32"
+                                ></textarea>
 			</div>
 			<div className="text-center">
-				<button
-					type="submit"
-					className="w-full mx-auto bg-red-500 text-white font-bold py-2 px-4 rounded-md hover:bg-red-600 transition duration-300"
-				>
-					Senden
-				</button>
+                                <button
+                                        type="submit"
+                                        aria-label="Nachricht senden"
+                                        className="w-full mx-auto bg-red-500 text-white font-bold py-2 px-4 rounded-md hover:bg-red-600 transition duration-300"
+                                >
+                                        Senden
+                                </button>
 			</div>
 			{status && <p className="mt-4 text-center font-bold">{status}</p>}
 		</form>
