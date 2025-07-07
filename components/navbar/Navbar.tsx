@@ -35,9 +35,9 @@ const Navbar = () => {
 	const isActive = (href: string) => pathname === href
 
 	return (
-                <nav className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-md">
-                        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                                <div className="flex justify-between items-center h-16">
+		<nav className="bg-white sticky top-0 z-50 shadow-lg">
+			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="flex justify-between items-center h-20">
 					{/* Logo */}
 					<div className="flex-shrink-0 flex items-center ">
 						<Link href="/" className="flex items-center">
@@ -47,7 +47,7 @@ const Navbar = () => {
                                                                 width={80}
                                                                 height={80}
                                                         />
-                                                        <span className="ml-2 text-2xl font-bold tracking-wide text-gray-800 hover:text-red-500">
+							<span className="ml-2 text-xl font-bold text-gray-800 hover:text-red-500">
 								{siteConfig.company}
 							</span>
 						</Link>
@@ -60,7 +60,7 @@ const Navbar = () => {
 							ticketItem.acf?.menu_item?.label && (
 								<Link
 									href={ticketItem.acf.menu_item.route}
-                                                                        className={`text-gray-800 hover:text-red-500 font-medium transition duration-300 ${
+									className={`text-gray-600 hover:text-red-500 font-medium transition duration-300 ${
 										isActive(ticketItem.acf.menu_item.route)
 											? "text-red-500"
 											: ""
@@ -71,7 +71,7 @@ const Navbar = () => {
 								</Link>
 							)}
                                                 <Link
-                                                        className="text-gray-800 hover:text-primary focus:outline-none"
+                                                        className="text-gray-600 hover:text-primary focus:outline-none"
                                                         href="https://maps.app.goo.gl/NBekjXxbtTSW2VHG6"
                                                         target="_blank"
                                                         aria-label="Anfahrt in Google Maps öffnen"
@@ -97,7 +97,7 @@ const Navbar = () => {
 							</svg>
 						</Link>
 						<button
-                                                        className="text-gray-800 hover:text-primary focus:outline-none"
+							className="text-gray-600 hover:text-primary focus:outline-none"
 							onClick={() => setIsOpen(!isOpen)}
 						>
 							<svg
@@ -126,7 +126,7 @@ const Navbar = () => {
 					isOpen ? "max-h-screen" : "max-h-0 overflow-hidden"
 				}`}
 			>
-                                <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/90 backdrop-blur-md">
+				<div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-gray-50">
 					{sortedMenuItems && sortedMenuItems.length > 0 ? (
 						sortedMenuItems.map((item) =>
 							item.acf?.menu_item &&
@@ -135,7 +135,7 @@ const Navbar = () => {
 								<Link
 									key={item.id}
 									href={item.acf.menu_item.route}
-                                                                        className={`block px-3 py-2 rounded-md text-base font-medium text-gray-800 transition duration-300 hover:text-red-500 ${
+									className={`block px-3 py-2 rounded-md text-base font-medium text-gray-600 transition duration-300 hover:text-red-500 ${
 										isActive(item.acf.menu_item.route)
 											? "text-red-500"
 											: ""

@@ -12,12 +12,12 @@ export default function CashlessPage() {
 				Cashless Konto
 			</h1>
 			<div className="grid grid-cols text-center">
-                                <h2 className="text-md text-white font-bold">
+				<h2 className="text-md text-black font-bold">
 					Dein Cashless-Konto ist deine elektronische Brieftasche am
 					Fragaria.
 				</h2>
 
-                                <h2 className="text-md text-white font-bold">
+				<h2 className="text-md text-black font-bold">
 					RÜCKERSTATTUNGEN BEANTRAGEN IM CASHLESS KONTO AB 00:01 UHR -
 					DIREKT NACH DEM EVENT.
 				</h2>

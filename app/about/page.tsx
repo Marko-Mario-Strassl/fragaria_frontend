@@ -12,13 +12,13 @@ export default function AboutPage() {
 					Über uns
 				</h1>
 				<div className="max-w-3xl mx-auto">
-                                        <h2 className="max-w-3xl text-md text-white font-bold mb-8 ">
+					<h2 className="max-w-3xl text-md text-black font-bold mb-8 ">
 						Aus Liebe zur Tanzmusik und der Motivation neue Wege zu
 						beschreiten, wollen wir Veranstaltungen in harmonischer
 						Atmosphäre schaffen. Räume (Felder) zur
 						Selbstentfaltung, in welchen alle willkommen sind.
 					</h2>
-                                        <h2 className="max-w-3xl text-md text-white font-bold mb-8 ">
+					<h2 className="max-w-3xl text-md text-black font-bold mb-8 ">
 						Räume voller Bass und Freude, welche die regionale
 						Kultur fördern, sie wachsen lässt und zu neuen
 						Horizonten treibt. Gemeinsam etwas Neues erschaffen -

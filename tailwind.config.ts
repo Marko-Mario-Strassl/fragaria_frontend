@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import defaultTheme from "tailwindcss/defaultTheme";
 
 export default {
   content: [
@@ -12,9 +11,6 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
-      },
-      fontFamily: {
-        sans: ["Poppins", ...defaultTheme.fontFamily.sans],
       },
     },
   },

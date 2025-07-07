@@ -3,7 +3,7 @@ import logo from "./assets/images/logo.png"
 export const siteConfig = {
 	company: "Fragaria",
 	logo: logo,
-        primaryColor: "text-white",
+	primaryColor: "text-black",
 	secondaryColor: "#6c757d",
 	contact: {
 		email: "info@fragaria.ch",
