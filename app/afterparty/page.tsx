@@ -3,8 +3,10 @@ import React from "react"
 import ArtistList from "@/components/artists/ArtistList"
 import { useLineupAfterparty } from "@/contexts/LineupAfterpartyContext"
 
-const NORDPORTAL_LINK = "https://maps.app.goo.gl/1Qw2e3r4t5y6u7i8"
-const TICKET_LINK = "https://www.ticketlink.ch/afterparty"
+const NORDPORTAL_LINK =
+	"https://nordportal.ch/programm/Fragaria-Afterparty-26-07-25"
+const TICKET_LINK =
+	"https://eventfrog.ch/de/p/party/house-techno/fragaria-afterparty-7340354971328635642.html"
 
 const AfterpartyPage: React.FC = () => {
 	const { lineupAfterparty } = useLineupAfterparty()
