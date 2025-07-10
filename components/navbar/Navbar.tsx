@@ -35,7 +35,7 @@ const Navbar = () => {
 	const isActive = (href: string) => pathname === href
 
 	return (
-		<nav className="bg-white sticky top-0 z-50 shadow-lg">
+		<nav className="bg-white sticky top-0 z-50 shadow-lg min-w-screen">
 			<div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex justify-between items-center h-20">
 					{/* Logo */}

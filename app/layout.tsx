@@ -6,6 +6,7 @@ import { SiteConfigProvider } from "@/contexts/SiteContext"
 import { FaqsProvider } from "@/contexts/FaqsContext"
 import { LineupMainstageProvider } from "@/contexts/LineupMainstageContext"
 import { LineupTreibhausProvider } from "@/contexts/LineupTreibhausContext"
+import { LineupAfterpartyProvider } from "@/contexts/LineupAfterpartyContext"
 import Footer from "@/components/footer/Footer"
 import { SponsorProvider } from "@/contexts/SponsorContext"
 import { MenuProvider } from "@/contexts/MenuContext"
@@ -54,20 +55,22 @@ export default function RootLayout({
 					<LineupTreibhausProvider>
 						<LineupMainstageProvider>
 							<FaqsProvider>
-								<body
-									className={`${inter.className} bg-[#2f93ff] relative`}
-								>
-									<MenuProvider>
-										<Navbar />
-									</MenuProvider>
-									<div className="pt-20 relative z-10 min-h-[80vh]">
-										<BackgroundImages />{" "}
-										<main className="max-w-7xl mx-auto relative z-10">
-											{children}
-										</main>
-									</div>
-									<Footer />
-								</body>
+								<LineupAfterpartyProvider>
+									<body
+										className={`${inter.className} bg-[#2f93ff] relative`}
+									>
+										<MenuProvider>
+											<Navbar />
+										</MenuProvider>
+										<div className="pt-20 relative z-10 min-h-[80vh]">
+											<BackgroundImages />{" "}
+											<main className="max-w-7xl mx-auto relative z-10">
+												{children}
+											</main>
+										</div>
+										<Footer />
+									</body>
+								</LineupAfterpartyProvider>
 							</FaqsProvider>
 						</LineupMainstageProvider>
 					</LineupTreibhausProvider>
