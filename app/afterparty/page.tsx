@@ -45,27 +45,6 @@ const AfterpartyPage: React.FC = () => {
 			<main className="container mx-auto px-4 pb-16">
 				<ArtistList artists={lineupAfterparty} />
 			</main>
-
-			{/* Footer */}
-			<footer className="absolute bottom-0 w-full flex justify-center gap-6 py-4 bg-blue-700/80">
-				{/* Social Icons, z.B. Instagram, Facebook */}
-				<a
-					href="https://instagram.com"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="text-white hover:text-yellow-200 text-2xl"
-				>
-					<i className="fab fa-instagram"></i>
-				</a>
-				<a
-					href="https://facebook.com"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="text-white hover:text-yellow-200 text-2xl"
-				>
-					<i className="fab fa-facebook"></i>
-				</a>
-			</footer>
 		</div>
 	)
 }
