@@ -1,7 +1,7 @@
 export const fetchWpData = async (url: string) => {
 	try {
 		const response = await fetch(
-			`https://wordpress.fragaria.ch/wp-json/wp/v2/${url}?_embed`,
+			`https://wordpress.fragaria.ch/wp-json/wp/v2/${url}?_embed&&per_page=100`,
 			{
 				method: "GET",
 			}
