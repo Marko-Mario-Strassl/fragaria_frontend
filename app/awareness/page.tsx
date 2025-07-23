@@ -1,7 +1,4 @@
 "use client"
-import Image from "next/image"
-import anreise from "../../assets/images/anreise.jpg"
-import situation from "../../assets/images/situation.jpg"
 import { useSiteConfig } from "@/contexts/SiteContext"
 
 export default function AwarenessPage() {
@@ -31,7 +28,7 @@ export default function AwarenessPage() {
 
                     <h2 className="max-w-3xl text-md text-black font-bold mb-8">
                         <span className="block mb-2 underline">Konsens ist Pflicht, Grenzen werden respektiert:</span>
-                        Nur ein klares „Ja" ist ein Ja.
+                        Nur ein klares &quotJa&quot ist ein Ja.
                         Respektiert die Grenzen eures Gegenübers. Keine Handlung ohne Zustimmung,
                         dies zählt auch bei nicht-sexuellen Begegnungen.
                     </h2>
@@ -50,8 +47,8 @@ export default function AwarenessPage() {
                     </h2>
 
                     <h2 className="max-w-3xl text-md text-black font-bold mb-8">
-                        <span className="block mb-2 underline">Safe-Word "Angel Shot":</span>
-                        Mit dem Safe-Word "Angel Shot" kann bei OK,
+                        <span className="block mb-2 underline">Safe-Word &quotAngel Shot&quot:</span>
+                        Mit dem Safe-Word &quotAngel Shot&quot kann bei OK,
                         Sicherheitsdienst, Samariter oder Barpersonal
                         diskret nach Hilfe gebeten werden.
                     </h2>
