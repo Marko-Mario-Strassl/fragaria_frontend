@@ -8,8 +8,8 @@ export default function HomePage() {
 					Fragaria
 				</h1>
 				<h2 className="text-xl md:text-3xl font-semibold text-black animate-fade-in-up">
-					26th July 2025 | <a href="https://www.google.com/maps/place/Fragaria+Festival/@47.4549473,8.340185,621m/data=!3m2!1e3!4b1!4m6!3m5!1s0x479013de853646c3:0x3ef23e7ec9a98ea7!8m2!3d47.4549473!4d8.340185!16s%2Fg%2F11v0h00lbh?entry=ttu&g_ep=EgoyMDI1MDcyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-600">Erdbeerfeld</a> 13:00 - 00:00 <br /><br />
-					26th/27th July 2025 | Afterparty @<a href="https://duckduckgo.com/?q=nordportla+baden&iaxm=directions&end=what%3ANordportal%2520Eventhalle%2520Baden%2Cwhere%3ASchmiedestrasse%252012%252C%2520Baden%252C%2520CH%25205400&transport=automobile" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-600">Nordportal Baden</a> 23:00 - 04:00
+					26th July 2025 | <a href="https://maps.app.goo.gl/LXYNPRGN9wJz1nf48?g_st=iw" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-600">Erdbeerfeld</a> 13:00 - 00:00 <br /><br />
+					26th/27th July 2025 | Afterparty @<a href="https://maps.app.goo.gl/GnxywPbAztoYSHMD9?g_st=iw" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-600">Nordportal Baden</a> 23:00 - 04:00
 				</h2>
 			</div>
 			<div className="relative min-w-full max-w-4xl aspect-video">
