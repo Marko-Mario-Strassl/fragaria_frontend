@@ -8,7 +8,8 @@ export default function HomePage() {
 					Fragaria
 				</h1>
 				<h2 className="text-xl md:text-3xl font-semibold text-black animate-fade-in-up">
-					26.07.2025 - SAVE THE DATE
+					26th July 2025 | <a href="https://maps.app.goo.gl/LXYNPRGN9wJz1nf48?g_st=iw" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-600">Erdbeerfeld</a> 13:00 - 00:00 <br /><br />
+					26th/27th July 2025 | Afterparty @<a href="https://maps.app.goo.gl/GnxywPbAztoYSHMD9?g_st=iw" target="_blank" rel="noopener noreferrer" className="underline hover:text-red-600">Nordportal Baden</a> 23:00 - 04:00
 				</h2>
 			</div>
 			<div className="relative min-w-full max-w-4xl aspect-video">
