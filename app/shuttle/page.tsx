@@ -18,7 +18,7 @@ export default function ShuttlePage() {
 						bereit.
 					</h2>
 					<h2 className="max-w-3xl text-md text-black font-bold mb-8 ">
-						Dieser wird von 23.45 bis 01.15 ab Bushaltestelle Tägi
+						Dieser wird von 23.45 bis 01.00 ab Bushaltestelle Tägi alle 8 Minuten
 						fahren. So seid ihr am schnellsten an der Afterparty und
 						könnt weiterfeiern!
 					</h2>
